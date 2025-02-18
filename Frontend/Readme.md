@@ -1,3 +1,5 @@
+---
+
 # React Learning Roadmap (Week 1 to Week 6)
 
 ## Overview
@@ -60,6 +62,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(element);
   }
   ```
 
+### **Assignment:**
+- Create a **Counter App** that uses state to track and display the count. Allow the user to increment and decrement the count.
+
 ---
 
 ## Week 2: Components, Props, State & Hooks
@@ -83,6 +88,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(element);
     fetchData();
   }, []); // Empty dependency array runs only on mount
   ```
+
+### **Project 1:**
+- Build a **Todo List** application where you manage the list of tasks, add new tasks, and toggle their completion status.
+
+### **Assignment:**
+- Use `useEffect` to fetch a list of items from a public API and display them on your React app.
 
 ---
 
@@ -129,6 +140,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(element);
   </Routes>
   ```
 
+### **Project 2:**
+- Create a **multi-page website** using React Router with pages like Home, About, and Contact.
+
+### **Assignment:**
+- Use Context API to pass global state across multiple components.
+
 ---
 
 ## Week 4: State Management & Performance Optimization
@@ -164,6 +181,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(element);
   ```jsx
   const LazyComponent = React.lazy(() => import('./LazyComponent'));
   ```
+
+### **Project 3:**
+- Build a **blog application** where each post can be viewed individually and lazily loaded.
+
+### **Assignment:**
+- Implement performance optimization using `useMemo` and `useCallback` in a component that performs expensive operations.
 
 ---
 
@@ -203,6 +226,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(element);
   });
   ```
 
+### **Project 4:**
+- Build a **chat application** where messages are exchanged in real-time using WebSockets.
+
+### **Assignment:**
+- Set up a backend API (using Express or another framework) to handle authentication and integrate it with your React frontend using JWT.
+
 ---
 
 ## Week 6: Testing, Deployment & Best Practices
@@ -241,12 +270,16 @@ ReactDOM.createRoot(document.getElementById('root')).render(element);
         - run: npm test
   ```
 
+### **Project 5:**
+- Deploy one of your projects (like the chat app or blog app) to **Vercel** or **Netlify**.
+
+### **Assignment:**
+- Write tests for a component using **Jest** and **React Testing Library**.
+
 ---
 
 ## Final Thoughts
 - This roadmap covers **everything from basics to advanced React**.
 - Focus on **projects** and **real-world applications**.
 - After this, explore **Next.js**, **Server Components**, and **Advanced State Management**.
-```
 
----
