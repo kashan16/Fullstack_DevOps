@@ -1,8 +1,8 @@
 ---
 
-## 1) **What is React? Why React?**
+1) **What is React? Why React?**
 
-### What is React?
+What is React?
 - **React** is a **JavaScript library** for building user interfaces (UIs), particularly single-page applications (SPAs). It allows developers to build complex UIs with a component-based architecture, making it easier to manage, update, and scale applications.
   
 - **React Features**:
