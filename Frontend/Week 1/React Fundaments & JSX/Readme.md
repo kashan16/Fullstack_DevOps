@@ -1,14 +1,16 @@
 ```
 
-1) What is React? Why React?
+## 1) What is React? Why React?
 
 React is a **JavaScript library** for building user interfaces (UIs), particularly **single-page applications (SPAs)**. It allows developers to build complex UIs with a **component-based architecture**, making it easier to manage, update, and scale applications.
 
+### React Features:
 - **Component-Based Architecture**: React encourages building UI components that can be reused throughout the application, promoting maintainability and scalability.
 - **Declarative Syntax**: Instead of manipulating the DOM directly, React allows you to describe how the UI should look at any point in time, and it handles the UI updates automatically.
 - **Virtual DOM**: React creates a virtual DOM in memory. When there are changes in the data, React first updates the virtual DOM, compares it with the actual DOM, and updates only the parts of the DOM that changed, making updates efficient.
 - **Unidirectional Data Flow**: Data in React flows in one direction (from parent to child components), making it easier to manage state and debug applications.
 
+### Why React?
 - **Performance**: Thanks to the Virtual DOM and efficient diffing algorithm, React updates only the necessary parts of the UI, improving performance.
 - **Declarative Syntax**: React’s declarative approach makes it easier to understand the UI structure and flow, as you only describe what the UI should look like for any given state.
 - **Component Reusability**: By breaking down the UI into smaller components, React makes it easy to reuse components, which leads to code reusability and easier maintenance.
