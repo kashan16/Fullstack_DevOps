@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
 import { useTheme } from "../contexts/ThemeContext";
 
 
@@ -12,6 +13,7 @@ const Profile = () => {
     instagram: "https://www.instagram.com/kashann16/",
     image: "https://avatars.githubusercontent.com/u/106725612?s=96&v=4",
   });
+  const { role , setRole } = useAuth();
 
   const handelPhotoClick = () => {
     window.open(profile.image, "_blank");
@@ -56,21 +58,33 @@ const Profile = () => {
         )}
       </div>
       <div className="mt-4 flex gap-2">
-        <button
-          className={`px-4 py-2 font-bold rounded-md ${isEditing ? "bg-green-500 hover:bg-green-600 text-white" : "bg-blue-500 hover:bg-blue-600 text-white"}`}
-          onClick={() => setIsEditing(!isEditing)}
-        >
-          {isEditing ? "Save" : "Edit"}
-        </button>
-        {isEditing && (
-          <button className="px-4 py-2 bg-gray-400 text-white rounded-md hover:bg-gray-500" onClick={() => setIsEditing(false)}>
+        { role === "admin" && (
+          <button
+          className={`mt-4 px-4 py-2 rounded-md ${
+            isEditing ? "bg-green-500 hover:bg-green-400 text-white" : "bg-blue-500 hover:bg-blue-400 text-white"
+          }`}
+          onClick={() => setIsEditing(!isEditing)}>
+            {isEditing ? "Save" : "Edit"}
+          </button>
+        ) }
+        { isEditing && role === "admin" && (
+          <button
+          className="mt-4 rounded-md px-4 py-2 bg-gray-400 text-white hover:bg-gray-500"
+          onClick={() => setIsEditing(false)}>
             Cancel
           </button>
-        )}
+        ) }
+        <button
+        className="mt-4 px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-400"
+        onClick={toggleTheme}>
+          Toggle Dark Mode
+        </button>
+        <button
+        className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400"
+        onClick={() => setRole(role === "admin" ? "user" : "admin")}>
+          Switch
+        </button>
       </div>
-      <button className="mt-4 px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600" onClick={toggleTheme}>
-        Toggle Dark Mode
-      </button>
     </div>
   );
 };
