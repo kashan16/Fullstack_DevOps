@@ -14,7 +14,7 @@ const taskReducer = (state: Task[], action: TaskAction): Task[] => {
         case "Add_Task":
             return [...state, { id: Date.now(), text: action.payload }];
         case "Remove_Task":
-            return state.filter(task => task.id !== action.payload); // Use id for removal
+            return state.filter(task => task.id !== action.payload);
         default:
             return state;
     }
@@ -39,7 +39,7 @@ const Todo = () => {
         }
     };
 
-    const removeTask = (id: number) => { // Pass number instead of string
+    const removeTask = (id: number) => {
         dispatch({ type: "Remove_Task", payload: id });
     };
 
