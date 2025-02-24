@@ -1,4 +1,5 @@
 import { useReducer, useState } from 'react';
+import { useTheme } from '../context/themeContext';
 
 type Task = {
     id: number;
@@ -20,17 +21,18 @@ const taskReducer = (state: Task[], action: TaskAction): Task[] => {
     }
 };
 
-const formatTime = (timeStamp : number) => {
-    return new Date(timeStamp).toLocaleTimeString([] , {
-        hour : "2-digit",
-        minute : "2-digit",
-        second : "2-digit",
+const formatTime = (timeStamp: number) => {
+    return new Date(timeStamp).toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
     });
 };
 
 const Todo = () => {
+    const { theme } = useTheme();
     const [input, setInput] = useState("");
-    const [Tasks, dispatch] = useReducer(taskReducer, []);
+    const [tasks, dispatch] = useReducer(taskReducer, []);
 
     const addTask = () => {
         if (input.trim() !== "") {
@@ -44,7 +46,7 @@ const Todo = () => {
     };
 
     return (
-        <div className='flex flex-col items-center min-h-screen bg-gray-800 p-6'>
+        <div className={`flex flex-col items-center min-h-screen p-6 ${theme === "light" ? "bg-white" : "bg-gray-800"}`}>
             <h1 className='text-3xl font-bold mb-4 text-blue-600'>To-Do List</h1>
 
             {/* Input Field */}
@@ -65,10 +67,10 @@ const Todo = () => {
 
             {/* Task List */}
             <ul className='mt-4 w-96'>
-                {Tasks.length === 0 ? (
+                {tasks.length === 0 ? (
                     <p className='text-gray-500 text-center'>No Tasks Added Yet</p>
                 ) : (
-                    Tasks.map((task) => ( 
+                    tasks.map((task) => ( 
                         <li
                             key={task.id}
                             className='flex justify-between items-center bg-gray-800 p-3 rounded-md shadow-lg mt-3 hover:bg-gray-700 transition'>
